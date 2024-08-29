@@ -54,6 +54,7 @@
       <div class="row">
         <div class="col-md-12">
           <input
+            id="addressInput"
             type="text"
             class="form-control"
             placeholder="주소를 입력해주세요."
@@ -78,7 +79,7 @@
           </select>
         </div>
         <div class="col-md-1.5 mt-2">
-          <button class="btn btn-success btn-block">검색</button>
+          <button id="searchBtn" class="btn btn-success btn-block">검색</button>
         </div>
         <div class="col-md-1.5 mt-2 text-right">
           <a href="#" class="btn btn-link">직접 검색하기</a>
@@ -163,7 +164,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script
       type="text/javascript"
-      src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=df1592415338847977e3832674269ad4"
+      src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=df1592415338847977e3832674269ad4&libraries=services"
     ></script>
     <!-- Custom JavaScript -->
     <script src="js/scripts.js"></script>
