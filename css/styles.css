@@ -18,8 +18,13 @@ h6 {
   font-weight: bold;
 }
 header {
-  background: #007bff;
+  background: #4caf50;
   color: white;
+}
+iframe {
+  height: calc(100vh - 100px); /* 100px은 푸터의 높이로 대체 */
+  width: 100%;
+  border: none;
 }
 footer {
   background: #343a40;
@@ -112,4 +117,7 @@ footer {
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: #4caf50;
+}
+.container {
+  margin-bottom: 50px; /* 폼과 페이지 하단 사이의 간격 */
 }

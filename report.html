@@ -50,106 +50,112 @@
     </nav>
 
     <!-- Header Section -->
-    <header class="bg-primary text-white text-center py-5">
+    <header class="text-white text-center py-5">
       <div class="container">
         <h1>Welcome to My Blog</h1>
         <p class="lead">A place to share knowledge and thoughts</p>
       </div>
     </header>
 
-    <!-- Blog Posts Section -->
-    <div class="container my-5">
-      <div class="row">
+    <div class="container mt-5">
+      <div class="row justify-content-center">
         <div class="col-md-8">
-          <!-- Blog Post 1 -->
-          <div class="card mb-4">
-            <img
-              class="card-img-top"
-              src="https://via.placeholder.com/750x300"
-              alt="Post image"
-            />
+          <div class="card">
+            <div class="card-header text-center">
+              <h3>농지 불법 이용 신고하기</h3>
+            </div>
             <div class="card-body">
-              <h2 class="card-title">Post Title 1</h2>
-              <p class="card-text">
-                This is a summary of the first blog post. It's concise and gives
-                readers a glimpse of the content.
-              </p>
-              <a href="#" class="btn btn-primary">Read More &rarr;</a>
-            </div>
-            <div class="card-footer text-muted">
-              Posted on August 27, 2024 by <a href="#">Author Name</a>
-            </div>
-          </div>
-
-          <!-- Blog Post 2 -->
-          <div class="card mb-4">
-            <img
-              class="card-img-top"
-              src="https://via.placeholder.com/750x300"
-              alt="Post image"
-            />
-            <div class="card-body">
-              <h2 class="card-title">Post Title 2</h2>
-              <p class="card-text">
-                This is a summary of the second blog post. More interesting
-                content here.
-              </p>
-              <a href="#" class="btn btn-primary">Read More &rarr;</a>
-            </div>
-            <div class="card-footer text-muted">
-              Posted on August 20, 2024 by <a href="#">Author Name</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sidebar Widgets -->
-        <div class="col-md-4">
-          <!-- Search Widget -->
-          <div class="card mb-4">
-            <h5 class="card-header">Search</h5>
-            <div class="card-body">
-              <div class="input-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Search for..."
-                />
-                <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Go!</button>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Categories Widget -->
-          <div class="card mb-4">
-            <h5 class="card-header">Categories</h5>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li><a href="#">Web Design</a></li>
-                    <li><a href="#">HTML</a></li>
-                    <li><a href="#">Freebies</a></li>
-                  </ul>
+              <form>
+                <div class="form-group">
+                  <label for="reporter-name">신고자 이름</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="reporter-name"
+                    placeholder="신고자의 이름을 입력하세요."
+                  />
                 </div>
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li><a href="#">JavaScript</a></li>
-                    <li><a href="#">CSS</a></li>
-                    <li><a href="#">Tutorials</a></li>
-                  </ul>
+                <div class="form-group">
+                  <label for="reporter-contact">연락처</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="reporter-contact"
+                    placeholder="전화번호 또는 이메일을 입력하세요."
+                  />
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Side Widget -->
-          <div class="card mb-4">
-            <h5 class="card-header">Side Widget</h5>
-            <div class="card-body">
-              You can put anything you want inside of these side widgets. They
-              are easy to use, and feature the new Bootstrap 4 card containers!
+                <div class="form-group">
+                  <label for="reported-name">피신고자 이름</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="reported-name"
+                    placeholder="피신고자의 이름을 입력하세요."
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="reported-address">피신고자 주소</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="reported-address"
+                    placeholder="불법 행위가 발생한 농지의 주소를 입력하세요."
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="incident-date">불법 행위 발생 시기</label>
+                  <input type="date" class="form-control" id="incident-date" />
+                </div>
+                <div class="form-group">
+                  <label for="violation-type">불법 행위 유형</label>
+                  <select class="form-control" id="violation-type">
+                    <option value="건축물 설치">건축물 설치</option>
+                    <option value="무단 점유">무단 점유</option>
+                    <option value="농업 외 용도 사용">농업 외 용도 사용</option>
+                    <option value="기타">기타</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="description">불법 행위의 구체적 내용</label>
+                  <textarea
+                    class="form-control"
+                    id="description"
+                    rows="4"
+                    placeholder="불법 행위의 구체적인 내용을 입력하세요."
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="evidence-photo">증거 사진</label>
+                  <input
+                    type="file"
+                    class="form-control-file"
+                    id="evidence-photo"
+                    multiple
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="additional-documents">관련 문서 첨부</label>
+                  <input
+                    type="file"
+                    class="form-control-file"
+                    id="additional-documents"
+                    multiple
+                  />
+                </div>
+                <div class="form-group form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="confirmation"
+                  />
+                  <label class="form-check-label" for="confirmation"
+                    >신고 내용이 사실임을 확인합니다.</label
+                  >
+                </div>
+                <button type="submit" class="btn btn-success btn-block">
+                  신고 제출
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -167,7 +173,5 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Custom JavaScript -->
-    <script src="js/scripts.js"></script>
   </body>
 </html>
