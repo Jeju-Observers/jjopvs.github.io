@@ -2,6 +2,7 @@ html,
 body {
   height: 100%;
   margin: 0;
+  padding: 0;
 }
 body {
   display: flex;
@@ -84,14 +85,14 @@ footer {
 }
 .map-container {
   position: relative;
-  height: 400px;
+  height: calc(100% - 100px);
   background-image: url("https://via.placeholder.com/1920x1080");
   background-size: cover;
   background-position: center;
 }
 #map {
   width: 100%;
-  height: 400px;
+  height: 100%;
 }
 .image-comparison {
   position: absolute;
