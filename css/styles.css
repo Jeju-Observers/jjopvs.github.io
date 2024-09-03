@@ -84,11 +84,10 @@ footer {
   border-radius: 20px;
 }
 .map-container {
-  position: relative;
-  height: calc(100% - 100px);
-  background-image: url("https://via.placeholder.com/1920x1080");
+  flex: 1;
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 #map {
   width: 100%;
