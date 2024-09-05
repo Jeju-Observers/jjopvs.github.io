@@ -8,7 +8,12 @@ body {
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
-  margin: 0;
+  margin: 0 auto;
+  min-height: 100vh; /* Ensure body takes the full viewport height */
+}
+.container,
+.search-container {
+  flex-shrink: 0; /* Prevent shrinking */
 }
 h1,
 h2,
@@ -31,7 +36,8 @@ footer {
   background: #343a40;
   color: white;
   padding: 20px 0;
-  margin-top: auto; /* Pushes footer to the bottom */
+  text-align: center;
+  margin-top: auto; /* Pushes the footer to the bottom */
 }
 .navbar {
   background-color: #ffffff;
@@ -75,10 +81,11 @@ footer {
   border-radius: 20px;
 }
 .map-container {
-  flex: 1;
+  flex-grow: 1; /* Take up the remaining space */
   background-size: cover;
   background-position: center;
-  position: relative;
+  /* position: relative; */
+  /* height: 100%; Make sure the map container fully expands */
 }
 #map {
   width: 100%;
@@ -111,4 +118,141 @@ footer {
 }
 .container {
   margin-bottom: 50px; /* 폼과 페이지 하단 사이의 간격 */
+}
+.status-box {
+  width: 350px;
+  padding: 15px;
+}
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.status-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.status-indicator {
+  display: flex;
+  align-items: center;
+}
+.status-indicator .green-dot {
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.status-header button {
+  background-color: #e0ecf8;
+  color: #333;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.info-section {
+  margin-bottom: 20px;
+}
+.info-section h4 {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+.info-section p {
+  margin: 5px 0;
+  font-size: 13px;
+  color: #555;
+}
+.info-section p span {
+  color: #007bff;
+  cursor: pointer;
+}
+.info-section hr {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.comparison {
+  display: flex;
+  margin-bottom: 20px;
+}
+.comparison > div {
+  flex: 1;
+  padding: 0 10px;
+}
+.comparison img {
+  width: 100%;
+  height: auto;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.gallery {
+  position: relative;
+  overflow: hidden;
+}
+.gallery-container {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+.gallery-item {
+  flex: 0 0 25%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.gallery-item img {
+  width: 100%;
+  height: auto;
+}
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+.gallery-nav.prev {
+  left: 10px;
+}
+.gallery-nav.next {
+  right: 10px;
+}
+
+h2 {
+  margin: 0;
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 18px;
+}
+.summary {
+  padding: 10px 15px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  text-align: left;
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+th {
+  font-weight: bold;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+td {
+  font-size: 12px;
 }

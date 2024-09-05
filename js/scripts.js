@@ -101,60 +101,150 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         var infoWindowContent = `
-        <div style="width:350px;padding:10px; max-height:600px; overflow-y:auto;">
-          <div class="text-right">
-            <button id="closeBtn" class="btn btn-danger btn-sm">X</button>
-          </div>
-          <div style="display: flex; margin-bottom: 10px;">
-            <div style="flex: 1; padding-right: 10px;">
-              <strong>최근 이미지</strong>
-              <img src="https://via.placeholder.com/150x100" alt="Recent Image" style="width:100%;"/>
-              <p class="text-center">2024. 09. 15</p>
-            </div>
-            <div style="flex: 1;">
-              <strong>비교 이미지</strong>
-              <img src="https://via.placeholder.com/150x100" alt="Comparison Image" style="width:100%;"/>
-              <p class="text-center">2024. 08. 19</p>
-            </div>
-          </div>
-          <hr style="margin: 10px 0;">
-          <div id="imageCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="row">
-                  <div class="col-6">
-                    <img src="../image/image1.png" alt="2024.07.31" style="width:100%;" />
-                    <p class="text-center">2024. 07. 31</p>
-                  </div>
-                  <div class="col-6">
-                    <img src="../image/image2.png" alt="2024.07.14" style="width:100%;" />
-                    <p class="text-center">2024. 07. 14</p>
-                  </div>
+    <div style="width: 400px; padding: 10px; max-height: 600px; overflow-y: auto;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <ul class="nav nav-tabs" id="myTab" role="tablist" style="flex-grow: 1;">
+          <li class="nav-item">
+            <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">농지정보</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">이미지비교</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="tab3-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">위반정보상세</a>
+          </li>
+        </ul>
+        <button id="closeBtn" class="btn btn-danger btn-sm" style="margin-left: 10px;">X</button>
+      </div>
+
+      <div class="tab-content" id="myTabContent">
+        <!-- Tab 1 Content -->
+        <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+          <div class="mt-2">
+            <div class="status-box">
+              <div class="status-header">
+                <div class="status-indicator">
+                  <div class="green-dot"></div>
+                  <h3>종합 상태: 정상</h3>
                 </div>
+                <button>과거 사진 비교 ></button>
               </div>
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-6">
-                    <img src="../image/image3.png" alt="2024.06.10" style="width:100%;" />
-                    <p class="text-center">2024. 06. 10</p>
-                  </div>
-                  <div class="col-6">
-                    <img src="../image/image4.png" alt="2024.04.30" style="width:100%;" />
-                    <p class="text-center">2024. 04. 30</p>
-                  </div>
-                </div>
+
+              <div class="info-section">
+                <h4>기본 정보</h4>
+                <p>주소: 서귀포시 표선면 가시리 3152</p>
+                <p>토지유형: 전</p>
+                <p>면적: 4,869 m²</p>
+                <p>농업: 없음</p>
+              </div>
+
+              <div class="info-section">
+                <h4>경작 정보</h4>
+                <p>경작 여부: 경작중 (2024.04.01 ~ 계속)</p>
+                <p>경작물: 일반 농산물</p>
+              </div>
+
+              <div class="info-section">
+                <h4>위반 정보</h4>
+                <p>행정 처분: 1회 (<span>상세보기</span>)</p>
+                <p>신고 여부: 2회 (<span>상세보기</span>)</p>
               </div>
             </div>
-            <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
           </div>
-        </div>`;
+        </div>
+
+        <!-- Tab 2 Content -->
+        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+          <div class="comparison">
+              <div>
+                  <img src="../image/image1.png" alt="최근 이미지">
+                  <p>최근 이미지</p>
+                  <p>2024.09.15</p>
+              </div>
+              <div>
+                  <img src="../image/image2.png" alt="비교 이미지">
+                  <p>비교 이미지</p>
+                  <p>2024.08.19</p>
+              </div>
+          </div>
+
+          <div class="controls">
+              <select id="year">
+                  <option value="2024">2024년</option>
+              </select>
+              <select id="month">
+                  <option value="7">7월</option>
+              </select>
+              <button id="search">검색</button>
+          </div>
+
+          <div class="gallery">
+              <div class="gallery-container" id="galleryContainer">
+                  <div class="gallery-item">
+                      <img src="../image/image1.png" alt="2024-07-31">
+                      <p>2024.07.31</p>
+                  </div>
+                  <div class="gallery-item">
+                      <img src="../image/image2.png" alt="2024-07-14">
+                      <p>2024.07.14</p>
+                  </div>
+                  <div class="gallery-item">
+                      <img src="../image/image3.png" alt="2024-06-10">
+                      <p>2024.06.10</p>
+                  </div>
+                  <div class="gallery-item">
+                      <img src="../image/image4.png" alt="2024-04-30">
+                      <p>2024.04.30</p>
+                  </div>
+              </div>
+              <button class="gallery-nav prev" id="prevBtn">&lt;</button>
+              <button class="gallery-nav next" id="nextBtn">&gt;</button>
+          </div>
+        </div>
+
+        <!-- Tab 3 Content -->
+        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+          <div class="mt-2">
+            <div class="container">
+                <h2>위반 정보 상세</h2>
+                <div class="summary">
+                    행정 처분 2회 | 신고 1회
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>일자</th>
+                            <th>구분</th>
+                            <th>내용</th>
+                            <th>상태</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024-05-10</td>
+                            <td>행정 처분</td>
+                            <td>소유주 조건 위반</td>
+                            <td>처리 중</td>
+                        </tr>
+                        <tr>
+                            <td>2023-10-07</td>
+                            <td>행정 처분</td>
+                            <td>불법 휴업</td>
+                            <td>처리 완료</td>
+                        </tr>
+                        <tr>
+                            <td>2023-07-25</td>
+                            <td>신고 일반</td>
+                            <td>신고 접수</td>
+                            <td>처리 완료</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
 
         // 인포윈도우 추가
         currentInfoWindow = new kakao.maps.InfoWindow({
