@@ -34,25 +34,16 @@ footer {
   margin-top: auto; /* Pushes footer to the bottom */
 }
 .navbar {
-  background-color: #f8f9fa;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.navbar {
   background-color: #ffffff;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 .navbar-brand {
-  color: #4caf50;
-  font-weight: bold;
-}
-.navbar-brand {
-  color: #4caf50;
+  color: #34c759;
   font-weight: bold;
 }
 .navbar-brand:hover {
-  color: #388e3c;
+  color: #34c759;
 }
 .navbar-nav .nav-link {
   color: #666666;

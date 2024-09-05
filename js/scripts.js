@@ -18,6 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
       var addressInput = document.getElementById("addressInput");
       var searchBtn = document.getElementById("searchBtn");
 
+      const urlParams = new URLSearchParams(window.location.search);
+      var address = urlParams.get("address");
+      if (address) {
+        searchAddress(address);
+      }
+
       searchBtn.addEventListener("click", function () {
         var address = addressInput.value;
         var citySelect = document.getElementById("city-select");
@@ -117,11 +123,11 @@ document.addEventListener("DOMContentLoaded", function () {
               <div class="carousel-item active">
                 <div class="row">
                   <div class="col-6">
-                    <img src="./image1.png" alt="2024.07.31" style="width:100%;" />
+                    <img src="../image/image1.png" alt="2024.07.31" style="width:100%;" />
                     <p class="text-center">2024. 07. 31</p>
                   </div>
                   <div class="col-6">
-                    <img src="./image2.png" alt="2024.07.14" style="width:100%;" />
+                    <img src="../image/image2.png" alt="2024.07.14" style="width:100%;" />
                     <p class="text-center">2024. 07. 14</p>
                   </div>
                 </div>
@@ -129,11 +135,11 @@ document.addEventListener("DOMContentLoaded", function () {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-6">
-                    <img src="./image3.png" alt="2024.06.10" style="width:100%;" />
+                    <img src="../image/image3.png" alt="2024.06.10" style="width:100%;" />
                     <p class="text-center">2024. 06. 10</p>
                   </div>
                   <div class="col-6">
-                    <img src="./image4.png" alt="2024.04.30" style="width:100%;" />
+                    <img src="../image/image4.png" alt="2024.04.30" style="width:100%;" />
                     <p class="text-center">2024. 04. 30</p>
                   </div>
                 </div>

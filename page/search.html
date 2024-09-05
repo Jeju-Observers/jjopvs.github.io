@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JJOPVS</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="../index.html" style="color: #34c759"
+        >JJOPVS</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-between"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="../page/search.html">농지검색</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../page/stat.html">통계</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../page/report.html">신고하기</a>
+          </li>
+        </ul>
+        <div class="auth-links">
+          <a href="../page/join.html" style="text-decoration: none">회원가입</a>
+          <a href="../page/login.html" style="text-decoration: none">로그인</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Search Section -->
+    <div class="container search-container">
+      <div class="row">
+        <div class="col-md-3 mt-2">
+          <select
+            id="city-select"
+            class="form-control"
+            onchange="enableSubSelect()"
+          >
+            <option value="">시를 선택하세요</option>
+            <option value="jeju">제주시</option>
+            <option value="seogwipo">서귀포시</option>
+          </select>
+        </div>
+        <div class="col-md-3 mt-2">
+          <select
+            id="sub-select"
+            class="form-control"
+            disabled
+            onchange="enableSubSelect2(),checkCitySelection()"
+          >
+            <option value="">읍/면/동을 선택하세요</option>
+          </select>
+        </div>
+        <div class="col-md-3 mt-2">
+          <select
+            id="sub-select2"
+            class="form-control"
+            disabled
+            onchange="checkCitySelection2()"
+          >
+            <option value="">읍/면/동을 선택하세요</option>
+          </select>
+        </div>
+        <div class="col-md-1.5 mt-2">
+          <button id="searchBtn" class="btn btn-success btn-block">검색</button>
+        </div>
+        <div class="col-md-2 mt-2 text-right">
+          <a href="#" class="btn btn-link" onclick="toggleAddressInput()"
+            >직접 검색하기</a
+          >
+        </div>
+      </div>
+      <div class="row mt-2" id="addressInputContainer" style="display: none">
+        <div class="col-md-12">
+          <input
+            id="addressInput"
+            type="text"
+            class="form-control"
+            placeholder="주소를 입력해주세요."
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="map-container">
+      <div id="map" style="height: 500px"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark">
+      <div>
+        <p class="m-0 text-center text-white">Copyright &copy; 2024 JJOPVS</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap and JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=df1592415338847977e3832674269ad4&libraries=services"
+    ></script>
+    <!-- Custom JavaScript -->
+    <script src="../js/scripts.js"></script>
+  </body>
+</html>
