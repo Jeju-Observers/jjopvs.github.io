@@ -100,7 +100,7 @@ async function searchAddress(address) {
         data.documents[0].x
       );
       map.setCenter(coords);
-      addMarker(coords);
+      addMarker(coords, address);
     } else {
       console.error("주소 검색 결과가 없습니다.");
     }
@@ -115,7 +115,7 @@ function searchLocationByRegion(city, subRegion, subRegion2) {
   searchAddress(query);
 }
 
-function addMarker(coords) {
+function addMarker(coords, address) {
   if (currentMarker) {
     currentMarker.setMap(null);
   }
@@ -129,7 +129,7 @@ function addMarker(coords) {
     position: coords,
   });
 
-  const infoWindowContent = createInfoWindowContent();
+  const infoWindowContent = createInfoWindowContent(address);
 
   currentInfoWindow = new kakao.maps.InfoWindow({
     content: infoWindowContent,
@@ -142,8 +142,32 @@ function addMarker(coords) {
       .addEventListener("click", () => currentInfoWindow.close());
   }, 0);
 }
+function normalizeAddress(address) {
+  return address.replace(/^(제주특별자치도|제주시|서귀포시)\s?/, "").trim();
+}
 
-function createInfoWindowContent() {
+// 부분 주소 매칭 함수
+function findMatchingAddress(searchAddress) {
+  const normalizedSearch = normalizeAddress(searchAddress);
+
+  for (let fullAddress in data) {
+    const normalizedFull = normalizeAddress(fullAddress);
+    if (normalizedFull.includes(normalizedSearch)) {
+      return fullAddress;
+    }
+  }
+
+  return null; // 매칭되는 주소가 없을 경우
+}
+
+function createInfoWindowContent(address) {
+  const matchingAddress = findMatchingAddress(address);
+  const locationData = matchingAddress ? data[matchingAddress] : null;
+
+  if (!locationData) {
+    return "<div>해당 주소의 데이터가 없습니다.</div>";
+  }
+
   var infoWindowContent = `
   <div style="width: 400px; padding: 10px; max-height: 600px; overflow-y: auto;">
     <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -176,16 +200,15 @@ function createInfoWindowContent() {
 
             <div class="info-section">
               <h4>기본 정보</h4>
-              <p>주소: 서귀포시 표선면 가시리 3152</p>
-              <p>토지유형: 전</p>
-              <p>면적: 4,869 m²</p>
+              <p>주소: ${matchingAddress}</p>
+              <p>토지유형: ${locationData["jimok_nm"]}</p>
+              <p>면적: ${locationData["parea"]} m²</p>
               <p>농업: 없음</p>
             </div>
 
             <div class="info-section">
               <h4>경작 정보</h4>
-              <p>경작 여부: 경작중 (2024.04.01 ~ 계속)</p>
-              <p>경작물: 일반 농산물</p>
+              <p>경작 여부 / 경작물: ${locationData["mst_cult_crp_code"]}</p>
             </div>
 
             <div class="info-section">
