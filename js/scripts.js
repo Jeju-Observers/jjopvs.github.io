@@ -176,7 +176,7 @@ function createInfoWindowContent(address) {
           <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">농지정보</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">이미지비교</a>
+          <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">과거사진비교</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" id="tab3-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">위반정보상세</a>
@@ -195,7 +195,6 @@ function createInfoWindowContent(address) {
                 <div class="green-dot"></div>
                 <h3>종합 상태: 정상</h3>
               </div>
-              <button>과거 사진 비교 ></button>
             </div>
 
             <div class="info-section">
