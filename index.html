@@ -37,6 +37,9 @@
               <a class="nav-link" href="./page/stat.html">통계</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="./page/ndvi.html">NDVI</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="./page/report.html">신고하기</a>
             </li>
           </ul>
@@ -51,34 +54,26 @@
         <h1>제주 농지 관리 시스템</h1>
       </div>
       <div class="container search-container">
-        <div class="row mt-2">
-          <div class="col-md-12 mt-2" id="addressInputContainer">
-            <form action="./page/search.html" method="get" class="search-form">
-              <div class="input-group">
-                <input
-                  id="addressInput"
-                  name="address"
-                  type="text"
-                  class="form-control"
-                  placeholder="주소를 입력해주세요."
-                />
-                <button id="searchBtn" class="btn header-btn">
-                  <img src="./image/Union.png" alt="검색" class="btn-image" />
-                </button>
-              </div>
-            </form>
-            </div>
+        <form action="./page/search.html" method="get" class="search-form">
+          <div class="input-group">
+            <input
+              id="addressInput"
+              name="address"
+              type="text"
+              class="form-control"
+              placeholder="주소를 입력해주세요."
+            />
+            <button id="searchBtn" class="btn header-btn">
+              <img src="./image/Union.png" alt="검색" class="btn-image" />
+            </button>
           </div>
-        </div>
+        </form>
       </div>
     </header>
 
-
-    
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-8 info-card d-flex">
-          <!-- 글 부분 -->
           <div class="col-md-6">
             <h4>2024 제주 농지이용실태조사 실시</h4>
             <p>기간: 2024년 7월 1일 ~ 10월 30일 까지</p>
@@ -91,7 +86,6 @@
               >자세히 보기</a
             >
           </div>
-          <!-- 이미지 부분 -->
           <div
             class="col-md-6 d-flex justify-content-center align-items-center"
           >
@@ -105,14 +99,12 @@
       </div>
     </div>
 
-    <!-- Footer -->
     <footer class="bg-dark">
       <div>
         <p class="m-0 text-center text-white">Copyright &copy; 2024 JJOPVS</p>
       </div>
     </footer>
 
-    <!-- Bootstrap and JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -120,7 +112,6 @@
       type="text/javascript"
       src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=df1592415338847977e3832674269ad4&libraries=services"
     ></script>
-    <!-- Custom JavaScript -->
     <script src="./js/scripts.js"></script>
   </body>
 </html>

@@ -41,6 +41,9 @@
             <a class="nav-link" href="../page/stat.html">통계</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="../page/ndvi.html">NDVI</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="../page/report.html">신고하기</a>
           </li>
         </ul>
@@ -52,9 +55,10 @@
     </nav>
 
     <!-- Search Section -->
-    <div class="container search-container">
+    <div class="container search-container mt-4">
       <div class="row">
-        <div class="col-md-3 mt-2">
+        <!-- Dropdowns -->
+        <div class="col-md-3">
           <select
             id="city-select"
             class="form-control"
@@ -65,35 +69,38 @@
             <option value="seogwipo">서귀포시</option>
           </select>
         </div>
-        <div class="col-md-3 mt-2">
+        <div class="col-md-3">
           <select
             id="sub-select"
             class="form-control"
             disabled
-            onchange="enableSubSelect2(),checkCitySelection()"
+            onchange="enableSubSelect2()"
           >
             <option value="">읍/면/동을 선택하세요</option>
           </select>
         </div>
-        <div class="col-md-3 mt-2">
+        <div class="col-md-3">
           <select
             id="sub-select2"
             class="form-control"
             disabled
             onchange="checkCitySelection2()"
           >
-            <option value="">읍/면/동을 선택하세요</option>
+            <option value="">세부 선택</option>
           </select>
         </div>
-        <div class="col-md-1.5 mt-2">
+        <!-- Search Button -->
+        <div class="col-md-1.5">
           <button id="searchBtn" class="btn btn-success btn-block">검색</button>
         </div>
-        <div class="col-md-2 mt-2 text-right">
-          <a href="#" class="btn btn-link" onclick="toggleAddressInput()"
-            >직접 검색하기</a
-          >
+        <!-- Address Search Link -->
+        <div class="col-md-2 text-right">
+          <button class="btn btn-link" onclick="toggleAddressInput()">
+            직접 검색하기
+          </button>
         </div>
       </div>
+      <!-- Address Input -->
       <div class="row mt-2" id="addressInputContainer" style="display: none">
         <div class="col-md-12">
           <input
