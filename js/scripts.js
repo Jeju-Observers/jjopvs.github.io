@@ -163,7 +163,7 @@ function findMatchingAddress(searchAddress) {
 function createInfoWindowContent(address) {
   const matchingAddress = findMatchingAddress(address);
   const locationData = matchingAddress ? data[matchingAddress] : null;
-
+  console.log(locationData);
   if (!locationData) {
     return "<div>해당 주소의 데이터가 없습니다.</div>";
   }
@@ -200,21 +200,36 @@ function createInfoWindowContent(address) {
 
             <div class="info-section">
               <h4>기본 정보</h4>
+              <p>농지ID: ${locationData["fml_id"]}</p>
               <p>주소: ${matchingAddress}</p>
-              <p>토지유형: ${locationData["jimok_nm"]}</p>
               <p>면적: ${locationData["parea"]} m²</p>
-              <p>농업: 없음</p>
+              <p>관련된 토지 면적: ${locationData["fml_ar"]} m²</p>
+              <p>농지구분: ${locationData["fml_se_code"]}</p>            
+              <p>농지지목: ${locationData["jimok_nm"]}</p>
+              <p>공부지목: ${locationData["rlnd_jimk_code"]}</p>
+              <p>실제지목: ${locationData["fact_jimk_code"]}</p>
             </div>
 
             <div class="info-section">
               <h4>경작 정보</h4>
-              <p>경작 여부 / 경작물: ${locationData["mst_cult_crp_code"]}</p>
+              <p>경작 여부/주재배작물	: ${locationData["mst_cult_crp_code"]}</p>
             </div>
 
             <div class="info-section">
-              <h4>위반 정보</h4>
-              <p>행정 처분: 1회 (<span>상세보기</span>)</p>
-              <p>신고 여부: 2회 (<span>상세보기</span>)</p>
+              <h4>토지 대장</h4>
+              <p>토지이동일: ${locationData["land_mov_ymd"]}</p>
+              <p>토지이동(변동)사유: ${locationData["land_mov_rsn_cd_nm"]}</p>  
+              <p>소유권변동일자: ${locationData["own_rgt_chg_ymd"]}</p>
+              <p>소유구분: ${locationData["own_gbn_nm"]}</p>  
+              <p>소유권변동원인	: ${locationData["own_rgt_chg_rsn_cd_nm"]}</p>
+            </div>
+
+            <div class="info-section">
+              <h4>개별공시지가</h4>
+              <p>가격기준년도: ${locationData["base_year"]}</p>
+              <p>개별공시지가: ${locationData["pnilp"]}</p>  
+              <p>기준월: ${locationData["stdmt"]}</p>
+              <p>공시일자: ${locationData["pann_ymd"]}</p>  
             </div>
           </div>
         </div>
@@ -264,8 +279,6 @@ function createInfoWindowContent(address) {
                     <p>2024.04.30</p>
                 </div>
             </div>
-            <button class="gallery-nav prev" id="prevBtn">&lt;</button>
-            <button class="gallery-nav next" id="nextBtn">&gt;</button>
         </div>
       </div>
 
