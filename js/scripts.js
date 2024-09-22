@@ -300,22 +300,22 @@ function createInfoWindowContent(address) {
                   </thead>
                   <tbody>
                       <tr>
-                          <td>2024-05-10</td>
-                          <td>행정 처분</td>
-                          <td>소유주 조건 위반</td>
-                          <td>처리 중</td>
+                          <td style="font-size: 0.7em;">2024-05-10</td>
+                          <td style="font-size: 0.7em;">행정 처분</td>
+                          <td style="font-size: 0.7em;">소유주 조건 위반</td>
+                          <td style="font-size: 0.7em;">처리 중</td>
                       </tr>
                       <tr>
-                          <td>2023-10-07</td>
-                          <td>행정 처분</td>
-                          <td>불법 휴업</td>
-                          <td>처리 완료</td>
+                          <td style="font-size: 0.7em;">2023-10-07</td>
+                          <td style="font-size: 0.7em;">행정 처분</td>
+                          <td style="font-size: 0.7em;">불법 휴업</td>
+                          <td style="font-size: 0.7em;">처리 완료</td>
                       </tr>
                       <tr>
-                          <td>2023-07-25</td>
-                          <td>신고 일반</td>
-                          <td>신고 접수</td>
-                          <td>처리 완료</td>
+                          <td style="font-size: 0.7em;">2023-07-25</td>
+                          <td style="font-size: 0.7em;">신고 일반</td>
+                          <td style="font-size: 0.7em;">신고 접수</td>
+                          <td style="font-size: 0.7em;">처리 완료</td>
                       </tr>
                   </tbody>
               </table>
