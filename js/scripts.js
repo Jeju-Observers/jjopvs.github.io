@@ -169,7 +169,7 @@ function createInfoWindowContent(address) {
   }
 
   var infoWindowContent = `
-  <div style="width: 400px; padding: 10px; max-height: 600px; overflow-y: auto;">
+  <div style="width: 400px; padding: 10px; max-height: 400px; overflow-y: auto;">
     <div style="display: flex; justify-content: space-between; align-items: center;">
       <ul class="nav nav-tabs" id="myTab" role="tablist" style="flex-grow: 1;">
         <li class="nav-item">
