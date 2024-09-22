@@ -238,23 +238,23 @@ function createInfoWindowContent(address) {
       <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
         <div class="comparison">
             <div>
-                <img src="../image/image1.png" alt="최근 이미지">
+                <img src="../image/map2021.png" alt="최근 이미지">
                 <p>최근 이미지</p>
-                <p>2024.09.15</p>
+                <p>2021</p>
             </div>
             <div>
-                <img src="../image/image2.png" alt="비교 이미지">
+                <img src="../image/map2020.png" alt="비교 이미지">
                 <p>비교 이미지</p>
-                <p>2024.08.19</p>
+                <p>2020</p>
             </div>
         </div>
 
         <div class="controls">
             <select id="year">
-                <option value="2024">2024년</option>
+                <option value="2020">2020년</option>
             </select>
             <select id="month">
-                <option value="7">7월</option>
+                <option value="7">1월</option>
             </select>
             <button id="search">검색</button>
         </div>
@@ -262,20 +262,20 @@ function createInfoWindowContent(address) {
         <div class="gallery">
             <div class="gallery-container" id="galleryContainer">
                 <div class="gallery-item">
-                    <img src="../image/image1.png" alt="2024-07-31">
-                    <p>2024.07.31</p>
+                    <img src="../image/map2021.png" alt="2021">
+                    <p>2021</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="../image/image2.png" alt="2024-07-14">
-                    <p>2024.07.14</p>
+                    <img src="../image/map2020.png" alt="2020">
+                    <p>2020</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="../image/image3.png" alt="2024-06-10">
-                    <p>2024.06.10</p>
+                    <img src="../image/map2019.png" alt="2019">
+                    <p>2019</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="../image/image4.png" alt="2024-04-30">
-                    <p>2024.04.30</p>
+                    <img src="../image/map2018.png" alt="2018">
+                    <p>2018</p>
                 </div>
             </div>
         </div>
